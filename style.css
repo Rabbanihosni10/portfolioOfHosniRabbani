@@ -138,15 +138,17 @@ section {
 .typing-text span {
     color: #b74b4b;
     position: relative;
+    display: inline-block;
 }
 .typing-text span::before {
-    content: "Full Stack Developer";
+    content: "Fresh Graduate";
     animation: words 15s infinite;
 }
 .typing-text span::after {
     content: "";
     position: absolute;
-    width: calc(100% + 8px);
+    /* width: calc(100% + 8px); */
+    width: 4px;
     height: 100%;
     background-color: #000000;
     border-left: 3px solid #b74b4b;
@@ -154,15 +156,150 @@ section {
     animation: cursor 0.6s infinite;
 }
 
+
+/* --- Projects Page Styles --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+}
+
+.project-card {
+    background: #161616;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(183, 75, 75, 0.2);
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.project-card.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #b74b4b;
+    box-shadow: 0 15px 35px rgba(183, 75, 75, 0.3);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #b74b4b;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 2rem;
+}
+
+.project-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.project-content p {
+    font-size: 1.4rem;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.tech-tags span {
+    background: rgba(183, 75, 75, 0.15);
+    color: #b74b4b;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 1px solid rgba(183, 75, 75, 0.5);
+}
+
+.project-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.project-links .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* --- Certifications Styles (for Experience Page) --- */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.cert-card {
+    background: #161616;
+    padding: 2rem;
+    border-radius: 1rem;
+    border-left: 4px solid #b74b4b;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.cert-card.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cert-card:hover {
+    transform: translateX(5px);
+    background: #1a1a1a;
+    box-shadow: 0 5px 20px rgba(183, 75, 75, 0.2);
+}
+
+.cert-card h4 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.cert-card .issuer {
+    font-size: 1.3rem;
+    color: #b74b4b;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.cert-card .date {
+    font-size: 1.2rem;
+    color: #888888;
+}
+
 @keyframes cursor {
     to { border-left: 3px solid #000000; }
 }
 
 @keyframes words {
-    0%, 20% { content: "Full Stack Developer"; }
-    21%, 40% { content: "Aspiring AI Engineer"; }
-    41%, 60% { content: "Coding Instructor"; }
-    61%, 80% { content: "Problem Solver"; }
+    0%, 20% { content: "Fresh Graduate"; }
+    21%, 40% { content: "Developer"; }
+    41%, 60% { content: "Aspiring App Developer"; }
+    61%, 80% { content: "Aspiring Reseacher(HCI & Computer Vision"; }
     81%, 100% { content: "Tech Enthusiast"; }
 }
 
